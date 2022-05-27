@@ -12,24 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#pragma once
+#if DISTRO >= HUMBLE
 
-#include <memory>
+#include <rmw/features.h>
 
-#include <rmw_ecal_shared_cpp/message_typesupport.hpp>
-#include <rmw_ecal_shared_cpp/service_typesupport.hpp>
-#include <rmw_ecal_shared_cpp/visibility.h>
+#include <rmw_ecal_shared_cpp/rmw/features.hpp>
 
-namespace eCAL
+bool rmw_feature_supported(rmw_feature_t feature)
 {
-  namespace rmw
-  {
-    class TypesupportFactory
-    {
-    public:
-      virtual MessageTypeSupport *Create(const rosidl_message_type_support_t *type_support) const = 0;
-      virtual ServiceTypeSupport *Create(const rosidl_service_type_support_t *type_support) const = 0;
-    };
+  return eCAL::rmw::rmw_feature_supported(feature);
+}
 
-  } // namespace rmw
-} // namespace eCAL
+#endif

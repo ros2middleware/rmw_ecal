@@ -54,7 +54,7 @@ include_directories(
 
 add_library(${PROJECT_NAME} SHARED
 	src/event.cpp
-        src/get_network_flow_endpoints.cpp
+  src/get_network_flow_endpoints.cpp
 	src/get_node_info_and_types.cpp
 	src/get_service_names_and_types.cpp
 	src/get_topic_names_and_types.cpp
@@ -63,6 +63,7 @@ add_library(${PROJECT_NAME} SHARED
 	src/init.cpp
 	src/qos_profiles.cpp
 	src/rmw.cpp
+	src/features.cpp
 )
 
 set(proto_files
